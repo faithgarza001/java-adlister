@@ -7,9 +7,10 @@
     <title>Title</title>
 </head>
 <body>
+<%@ include file="partials/navbar.jsp" %>
 
-<h3>Login Form</h3>
 <div style="text-align: center;">
+    <h3>Login Form</h3>
     <form action="login.jsp" method="post">
         Username:<input type="text" name="username"/><br/><br/>
         Password:<input type="password" name="password"/><br/><br/>

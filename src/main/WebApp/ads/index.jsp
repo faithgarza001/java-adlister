@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: faithgarza
-  Date: 2/26/20
-  Time: 11:02 AM
+  Date: 2/27/20
+  Time: 3:12 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,8 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
-<img src="${pageContext.request.contextPath}/resources/images/amazing-animal-beautiful-beautifull.jpg">
 
 </body>
 </html>
