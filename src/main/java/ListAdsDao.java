@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//List ads such as this will be replaced using mysql database this is a hardcoded example that implements the ads methods
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
 
@@ -21,6 +21,31 @@ public class ListAdsDao implements Ads {
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
+    }
+
+    @Override
+    public List<Ad> getAllByUser(long userId) {
+        return null;
+    }
+
+    @Override
+    public List<Ad> getAdsByCategory(String category) {
+        return null;
+    }
+
+    @Override
+    public Ad retrieve(long id) {
+        return null;
+    }
+
+    @Override
+    public boolean update(Ad ad) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(long id) {
+        return false;
     }
 
     private List<Ad> generateAds() {
@@ -51,4 +76,6 @@ public class ListAdsDao implements Ads {
         ));
         return ads;
     }
+
+
 }
