@@ -2,16 +2,16 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
+import com.mysql.cj.jdbc.PreparedStatement;
+import com.sun.jdi.connect.Connector;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
+
 
     public MySQLAdsDao(Config config) {
         try {
@@ -37,6 +37,41 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+
+
+ public boolean insert(Ad ad){
+     Connector connector = new Connector();
+     Connection connection = connector.getConnection();
+     try {
+         PreparedStatement ps = (PreparedStatement) connection.prepareStatement("INSERT INTO user VALUES (NULL, ?, ?, ?)");
+         ps.setString(1, ad.getUserId());
+         ps.setString(2, ad.getT());
+         ps.setInt(3, user.getAge());
+         int i = ps.executeUpdate();
+         if(i == 1) {
+             return true;
+         }
+     } catch (SQLException ex) {
+         ex.printStackTrace();
+     }
+     return false;
+ }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public Long insert(Ad ad) {
